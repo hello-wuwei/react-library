@@ -1,0 +1,38 @@
+{
+  "name": "@mx-admin/oss-system",
+  "version": "0.1.0",
+  "description": "mx-admin feature: oss-system",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "type": "module",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup --config ../../rollup.config.mjs",
+    "build-dev": "rollup --config ../../rollup.config.mjs",
+    "watch": "rollup --watch --config ../../rollup.config.mjs",
+    "publish-local": "yalc publish"
+  },
+  "dependencies": {
+    "@mx-admin/utils": "0.9.0",
+    "classnames": "^2.3.1",
+    "tslib": "^2.6.2"
+  },
+  "devDependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@mx-admin/core": "0.5.0",
+    "@types/react": "^16.8.6",
+    "antd": "~4.24.16"
+  },
+  "peerDependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@mx-admin/core": "^0.5.0",
+    "antd": "~4.24.16",
+    "react": "^16.8.6"
+  },
+  "resolutions": {
+    "@types/react": "^16.8.6"
+  }
+}
