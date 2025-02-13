@@ -1,0 +1,169 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.eslint.json"
+  },
+  "plugins": ["@typescript-eslint", "import", "react"],
+  "overrides": [
+    {
+      "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "airbnb-typescript",
+        "plugin:react/jsx-runtime",
+        "prettier"
+      ],
+      "rules": {
+        "@typescript-eslint/ban-ts-comment": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-use-before-define": "off",
+        "@typescript-eslint/return-await": "off",
+        "@typescript-eslint/consistent-type-imports": [
+          "error",
+          {
+            "fixStyle": "inline-type-imports"
+          }
+        ],
+        "@typescript-eslint/consistent-type-exports": [
+          "error",
+          {
+            "fixMixedExportsWithInlineTypeSpecifier": true
+          }
+        ],
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": [
+              "**/*.test.js",
+              "**/*.test.ts",
+              "**/*.test.jsx",
+              "**/*.test.tsx"
+            ],
+            "peerDependencies": true
+          }
+        ],
+        "no-console": [
+          "error",
+          {
+            "allow": ["warn", "error"]
+          }
+        ],
+        "no-use-before-define": "off",
+        "padding-line-between-statements": [
+          "error",
+          {
+            "blankLine": "always",
+            "prev": "*",
+            "next": "return"
+          },
+          {
+            "blankLine": "always",
+            "prev": ["const", "let", "var"],
+            "next": "*"
+          },
+          {
+            "blankLine": "any",
+            "prev": ["const", "let", "var"],
+            "next": ["const", "let", "var"]
+          },
+          {
+            "blankLine": "always",
+            "prev": "directive",
+            "next": "*"
+          },
+          {
+            "blankLine": "any",
+            "prev": "directive",
+            "next": "directive"
+          },
+          {
+            "blankLine": "always",
+            "prev": "block-like",
+            "next": "*"
+          },
+          {
+            "blankLine": "always",
+            "prev": ["expression", "multiline-expression"],
+            "next": "*"
+          },
+          {
+            "blankLine": "any",
+            "prev": ["expression", "multiline-expression"],
+            "next": ["expression", "multiline-expression"]
+          },
+          {
+            "blankLine": "always",
+            "prev": "switch",
+            "next": "*"
+          },
+          {
+            "blankLine": "always",
+            "prev": "import",
+            "next": "*"
+          },
+          {
+            "blankLine": "any",
+            "prev": "import",
+            "next": "import"
+          },
+          {
+            "blankLine": "always",
+            "prev": "*",
+            "next": "case"
+          },
+          {
+            "blankLine": "any",
+            "prev": "case",
+            "next": "case"
+          },
+          {
+            "blankLine": "always",
+            "prev": "*",
+            "next": "default"
+          },
+          {
+            "blankLine": "any",
+            "prev": "case",
+            "next": "default"
+          }
+        ],
+        "react/prop-types": "off",
+        "react/react-in-jsx-scope": "off"
+      }
+    },
+    {
+      "files": [
+        "scripts/*",
+        "rollup-plugins/*",
+        "./rollup.config.mjs",
+        "./lint-staged.config.js",
+        "./jest.config.js",
+        "./commitlint.config.js"
+      ],
+      "env": {
+        "browser": false,
+        "node": true
+      },
+      "rules": {
+        "no-console": "off",
+        "import/no-extraneous-dependencies": "off"
+      }
+    }
+  ],
+  "ignorePatterns": ["**/dist/**/*"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
