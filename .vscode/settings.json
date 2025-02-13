@@ -1,0 +1,13 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "zsh",
+      "args": ["-c", "source .zshrc && exec zsh"]
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "cSpell.words": ["ahooks", "antd", "EFTD", "Immer", "indexeses"],
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
